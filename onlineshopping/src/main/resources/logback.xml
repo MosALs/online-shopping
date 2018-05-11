@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+<!-- 5 means : the no of characters of the level ,  levels : like debug , info , race , warn , error . %msg messege u want to display in the logging ,{HH:mm:ss.SSS} the time   -->
+		<encoder>
+			<Pattern>%-5level %msg %d{HH:mm:ss.SSS} %logger{36} %n</Pattern>
+		</encoder>
+	</appender>
+
+
+<!-- additivity = "false" , to prevent any thing from being logging twice  -->
+	
+	<logger name="net.kzn" level="DEBUG" additivity = "false">
+		<appender-ref ref="consoleAppender"/>	
+	</logger>	
+
+	<root level="INFO">
+		<appender-ref ref="consoleAppender"/>
+	</root>
+
+</configuration>
